@@ -1,6 +1,5 @@
 import Header from "./components/Header";
 import Main from "./components/Main";
-
 // Exercise 1d: import and render <Footer/> inside App.jsx
 import Footer from "./components/Footer";
 
