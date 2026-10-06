@@ -1,13 +1,18 @@
 function Header() {
   return (
     <header className="bg-blue-600 text-white px-6 py-4 flex justify-between items-center">
-      <h1 className="text-2xl font-bold">My Store</h1>
+      {/* Exercise 1a: changed store name to E-Commerce store. */}
+      <h1 className="text-2xl font-bold">My E-Commerce Store</h1>
       <nav className="flex gap-4">
         <a href="/" className="hover:underline">
           Home
         </a>
         <a href="/products" className="hover:underline">
           Products
+        </a>
+        {/* Exercise 1b: added a third nav link - "About" */}
+        <a href="/about" className="hover:underline">
+          About
         </a>
       </nav>
     </header>

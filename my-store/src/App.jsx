@@ -1,5 +1,8 @@
 import Header from "./components/Header";
-import ProductCard from "./components/ProductCard";
+import Main from "./components/Main";
+
+// Exercise 1d: import and render <Footer/> inside App.jsx
+import Footer from "./components/Footer";
 
 const products = [
   {
@@ -26,21 +29,12 @@ function App() {
   return (
     <div>
       <Header />
-      <main className="p-6 bg-gray-100 min-h-screen">
-        <h2 className="text-2xl font-semibold text-center mb-6">
-          Our Products
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {products.map((product) => (
-            <ProductCard
-              key={product.id}
-              name={product.name}
-              price={product.price}
-              description={product.description}
-            />
-          ))}
-        </div>
-      </main>
+
+      {/* Main Content Component */}
+      <Main />
+
+      {/* Rendering <Footer /> below Main */}
+      <Footer />
     </div>
   );
 }
