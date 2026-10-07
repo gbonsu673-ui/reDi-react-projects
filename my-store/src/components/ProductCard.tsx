@@ -9,6 +9,7 @@ export interface ProductCardProps {
 }
 
 function ProductCard({
+  id,
   name,
   price,
   description,
