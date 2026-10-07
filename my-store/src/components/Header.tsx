@@ -10,6 +10,7 @@ function Header() {
         <a href="/products" className="hover:underline">
           Products
         </a>
+
         {/* Exercise 1b: added a third nav link - "About" */}
         <a href="/about" className="hover:underline">
           About

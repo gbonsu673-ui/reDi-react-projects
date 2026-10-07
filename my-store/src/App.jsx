@@ -9,18 +9,24 @@ const products = [
     name: "Running Shoes",
     price: 89.99,
     description: "Lightweight and fast.",
+    category: "Footwear",
+    image: "https://picsum.photos/200?random=1",
   },
   {
     id: 2,
     name: "Yoga Mat",
     price: 24.99,
     description: "Non-slip, 6mm thick.",
+    category: "Fitness",
+    image: "https://picsum.photos/200?random=2",
   },
   {
     id: 3,
     name: "Water Bottle",
     price: 14.99,
     description: "Insulated, 750ml.",
+    category: "Hydration",
+    image: "https://picsum.photos/200?random=3",
   },
 ];
 
@@ -30,9 +36,10 @@ function App() {
       <Header />
 
       {/* Main Content Component */}
-      <Main />
+      {/* Exercise 4: passed products array down to Main as a prop */}
+      <Main products={products} />
 
-      {/* Rendering <Footer /> below Main */}
+      {/* Exercise 1: Rendering <Footer /> below Main */}
       <Footer />
     </div>
   );
