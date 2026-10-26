@@ -3,9 +3,9 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 // Exercise 1d: import and render <Footer/> inside App.jsx
 import Footer from "./components/Footer";
-import ProductList from "./components/ProductList";
-import CartList from "./components/CartList";
-import ProductDetails from "./components/ProductDetails";
+import ProductList from "./pages/ProductList";
+import CartList from "./pages/CartList";
+import ProductDetails from "./pages/ProductDetails";
 
 const products = [
   {

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import ProductDetails from "./ProductDetails";
+import ProductDetails from "../pages/ProductDetails";
 
 // typescript implementaton
 export interface ProductCardProps {
