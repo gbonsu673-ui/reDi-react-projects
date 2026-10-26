@@ -15,7 +15,7 @@ function Main({ products }: MainProps) {
             <ProductCard
               key={product.id}
               id={product.id}
-              name={product.name}
+              title={product.title}
               price={product.price}
               description={product.description}
               category={product.category}

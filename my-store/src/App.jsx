@@ -1,7 +1,11 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Main from "./components/Main";
 // Exercise 1d: import and render <Footer/> inside App.jsx
 import Footer from "./components/Footer";
+import ProductList from "./components/ProductList";
+import CartList from "./components/CartList";
+import ProductDetails from "./components/ProductDetails";
 
 const products = [
   {
@@ -34,11 +38,17 @@ function App() {
   return (
     <div>
       <Header />
+      <BrowserRouter>
+        <Routes>
+          <Route path="cart" element={<CartList />} />
+          <Route path="products" element={<ProductList />} />
+          <Route path="products/:id" element={<ProductDetails />} />
+        </Routes>
+      </BrowserRouter>
 
       {/* Main Content Component */}
       {/* Exercise 4: passed products array down to Main as a prop */}
-      <Main products={products} />
-
+      {/* <Main products={products} /> */}
       {/* Exercise 1: Rendering <Footer /> below Main */}
       <Footer />
     </div>
