@@ -1,39 +1,63 @@
+import { Plus } from "lucide-react";
+import { Minus } from "lucide-react";
+import { Trash } from "lucide-react";
+
 // Typescript annotation
 export interface CartItemProps {
   id: number;
   name: string;
   price: number;
+  category: string;
   quantity: number;
-  onSale?: boolean;
+  image: string;
 }
 
-// On-Sale Component
-function OnSaleBadge() {
+// Quantity Component
+function Quantity() {
   return (
-    <span className="font-bold text-sm text-red-600 ml-3 px-3 py-1 bg-red-100 uppercase rounded">
-      Sale
-    </span>
+    <div className="flex space-x-6 px-1.5 py-0.5 my-5 border rounded-2xl">
+      <button>
+        <Minus className=" text-gray-800  font-semibold" />
+      </button>
+      <span className="  text-gray-800  font-semibold"> 2 </span>
+      <button className="  text-gray-800  font-semibold">
+        <Plus />
+      </button>
+    </div>
   );
 }
 
 // CartItem Component
-function CartItem({ name, price, quantity, onSale }: CartItemProps) {
+function CartItem({ name, price, quantity, category, image }: CartItemProps) {
   const lineTotal = price * quantity;
   return (
-    <div className="flex items-center justify-between py-3 px-6 border-b border-gray-200">
-      {/* Flex Item: 1 - a div containing name of cart item*/}
-      <div>
-        <p>
-          {name}
-          {/* Conditional Rendering: Had help from Arian */}
-          {onSale && <OnSaleBadge />}
-        </p>
+    <div className="flex justify-between items-center bg-white shadow-md rounded-lg hover:shadow-xl hover:-translate-y-1 transition-transform mt-5">
+      {/*  */}
+      <div className="flex-1 h-40">
+        <img
+          className="h-full w-full object-contain"
+          src={`${image}`}
+          alt={`${name}`}
+        />
       </div>
 
-      {/* Flex Item: 2 - a div containing quantity and line total of cart item */}
-      <div className="flex justify-between gap-4">
-        <p>Qty: {quantity}</p>
-        <p className="font-bold">${lineTotal.toFixed(2)}</p>
+      {/*  */}
+      <div className="flex-2">
+        <div className="text-left p-5">
+          <h3 className="text-lg text-black font-bold line-clamp-1">{`${name}`}</h3>
+          <p>{`${category}`}</p>
+          <p className="text-green-600 font-bold">{`$${price}`}</p>
+        </div>
+
+        {/*  */}
+        <div className="text-left font-light flex space-x-5 px-4">
+          <Quantity />
+
+          {/*  */}
+          <button>
+            <Trash className="text-red-400" />
+          </button>
+        </div>
       </div>
     </div>
   );
