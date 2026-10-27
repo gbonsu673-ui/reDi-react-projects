@@ -38,13 +38,12 @@ function App() {
   return (
     <div>
       <Header />
-      <BrowserRouter>
-        <Routes>
-          <Route path="cart" element={<CartList />} />
-          <Route path="products" element={<ProductList />} />
-          <Route path="products/:id" element={<ProductDetails />} />
-        </Routes>
-      </BrowserRouter>
+
+      <Routes>
+        <Route path="cart" element={<CartList />} />
+        <Route path="products" element={<ProductList />} />
+        <Route path="products/:id" element={<ProductDetails />} />
+      </Routes>
 
       {/* Main Content Component */}
       {/* Exercise 4: passed products array down to Main as a prop */}

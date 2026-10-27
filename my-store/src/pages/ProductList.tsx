@@ -23,8 +23,8 @@ function ProductList() {
 
   return (
     <main className="m-auto max-w-275 min-h-screen overflow-auto px-10 bg-gray-100">
-      <h2 className="text-2xl font-semibold text-center mb-6">Our Products</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-5">
+      <h2 className="product-list-header">Explore Our Products</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-5 mb-5">
         {isLoading ? (
           <p>Loading products...</p>
         ) : (

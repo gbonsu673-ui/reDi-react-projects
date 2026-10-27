@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Info } from "lucide-react";
+import { useCart } from "../context/CartContext";
 
 function ProductDetails() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const { addToCart } = useCart();
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/${id}`)
@@ -44,7 +46,10 @@ function ProductDetails() {
               <Info className="inline mr-1 align-super h-3 w-3 text-gray-500" />
             </p>
             {/* Add to cart button */}
-            <button className="mt-5 p-2 w-full text-white text-xs bg-blue-400 rounded-2xl uppercase hover:scale-95 hover:cursor-pointer transition-transform">
+            <button
+              onClick={() => addToCart(product)}
+              className="mt-5 p-2 w-full text-white text-xs bg-blue-400 rounded-2xl uppercase hover:scale-95 hover:cursor-pointer transition-transform"
+            >
               Add to cart
             </button>
           </div>
