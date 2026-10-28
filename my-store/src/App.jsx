@@ -2,37 +2,38 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Main from "./components/Main";
 // Exercise 1d: import and render <Footer/> inside App.jsx
+import HomePage from "./pages/HomePage";
 import Footer from "./components/Footer";
 import ProductList from "./pages/ProductList";
 import CartList from "./pages/CartList";
 import ProductDetails from "./pages/ProductDetails";
 
-const products = [
-  {
-    id: 1,
-    name: "Running Shoes",
-    price: 89.99,
-    description: "Lightweight and fast.",
-    category: "Footwear",
-    image: "https://picsum.photos/200?random=1",
-  },
-  {
-    id: 2,
-    name: "Yoga Mat",
-    price: 24.99,
-    description: "Non-slip, 6mm thick.",
-    category: "Fitness",
-    image: "https://picsum.photos/200?random=2",
-  },
-  {
-    id: 3,
-    name: "Water Bottle",
-    price: 14.99,
-    description: "Insulated, 750ml.",
-    category: "Hydration",
-    image: "https://picsum.photos/200?random=3",
-  },
-];
+// const products = [
+//   {
+//     id: 1,
+//     name: "Running Shoes",
+//     price: 89.99,
+//     description: "Lightweight and fast.",
+//     category: "Footwear",
+//     image: "https://picsum.photos/200?random=1",
+//   },
+//   {
+//     id: 2,
+//     name: "Yoga Mat",
+//     price: 24.99,
+//     description: "Non-slip, 6mm thick.",
+//     category: "Fitness",
+//     image: "https://picsum.photos/200?random=2",
+//   },
+//   {
+//     id: 3,
+//     name: "Water Bottle",
+//     price: 14.99,
+//     description: "Insulated, 750ml.",
+//     category: "Hydration",
+//     image: "https://picsum.photos/200?random=3",
+//   },
+// ];
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
       <Header />
 
       <Routes>
+        <Route path="/" element={<HomePage />} />
         <Route path="cart" element={<CartList />} />
         <Route path="products" element={<ProductList />} />
         <Route path="products/:id" element={<ProductDetails />} />

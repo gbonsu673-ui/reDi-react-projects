@@ -21,11 +21,6 @@ function Header() {
             Products
           </Link>
 
-          {/* Exercise 1b: added a third nav link - "About" */}
-          <Link to="/about" className="hover:underline">
-            About
-          </Link>
-
           {/* Cart Link */}
           <Link to="/cart" className="hover:cursor-pointer">
             <ShoppingCart className="h-8 w-8" />
