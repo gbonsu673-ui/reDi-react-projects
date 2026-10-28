@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Plus } from "lucide-react";
 import { useCart } from "../context/CartContext";
 import ProductDetails from "../pages/ProductDetails";
+import confetti from "canvas-confetti";
 
 // typescript implementaton
 export interface ProductCardProps {
@@ -19,7 +20,7 @@ function ProductCard(product: ProductCardProps) {
   // Adding a State
   const [isFavourite, setIsFavourite] = useState(false);
 
-  const { cart, addToCart } = useCart();
+  const { addToCart } = useCart();
 
   return (
     <div className="p-4 flex flex-col justify-center space-y-1.5 items-center bg-white shadow-md rounded-lg hover:shadow-xl hover:-translate-y-1 transition-transform ">
@@ -32,7 +33,7 @@ function ProductCard(product: ProductCardProps) {
           </p>
         </div>
 
-        {/* Add to Button */}
+        {/* Favourite Button */}
         <div>
           <button
             onClick={() => setIsFavourite(!isFavourite)}
@@ -79,6 +80,10 @@ function ProductCard(product: ProductCardProps) {
         <button
           onClick={() => {
             addToCart(product);
+            confetti({
+              particleCount: 250,
+              spread: 100,
+            });
           }}
           className="mt-1.5 p-2 h-8 w-8 text-white text-xl bg-blue-400 rounded-full uppercase hover:scale-95 hover:cursor-pointer transition-transform"
         >

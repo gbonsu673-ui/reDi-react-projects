@@ -14,6 +14,7 @@ interface CardContextValue {
   addToCart: (product: ProductCardProps) => void;
   onRemoveItem: (productId: number) => void;
   removeItemFromCart: (productId: number) => void;
+  removeAllItemsInCart: () => void;
 }
 
 // Initialize Context
@@ -58,6 +59,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     );
   };
 
+  // Remove Cart Item Object From Cart
   const removeItemFromCart = (productId: number) => {
     setCart((previousCart) =>
       previousCart.map((item) =>
@@ -66,10 +68,21 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     );
   };
 
+  // Remove All Items From Cart
+  const removeAllItemsInCart = () => {
+    setCart([]);
+  };
+
   //  Provide Context Values for Consumer Components
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, onRemoveItem, removeItemFromCart }}
+      value={{
+        cart,
+        addToCart,
+        onRemoveItem,
+        removeItemFromCart,
+        removeAllItemsInCart,
+      }}
     >
       {children}
     </CartContext.Provider>
