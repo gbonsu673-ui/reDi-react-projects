@@ -18,7 +18,7 @@ function CartList() {
   if (cart.length === 0) {
     return (
       <main className="m-auto max-w-275 min-h-screen overflow-auto px-10 bg-gray-100">
-        <div className="mt-6">
+        <div className="mt-8">
           <p className="text-sm text-black"> Sorry. Your cart is empty 😔💔</p>
           <p>
             <Link
