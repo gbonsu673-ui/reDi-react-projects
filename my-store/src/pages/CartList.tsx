@@ -36,7 +36,6 @@ function CartList() {
   return (
     <>
       {/* Display product items in shopping cart */}
-
       <div className="m-auto max-w-275 min-h-screen overflow-auto px-10 pb-5">
         <p className="font-extrabold text-lg text-left pt-4">
           Blue Kiosk Basket ({allItemsInCart} items)
